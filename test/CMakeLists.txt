@@ -1,0 +1,8 @@
+# find Check
+FIND_PACKAGE(Check REQUIRED)
+INCLUDE_DIRECTORIES(${CHECK_INCLUDE_DIRS})
+SET(LIBS zsr ${CHECK_LIBRARIES})
+
+ADD_EXECUTABLE(common_test common.c)
+TARGET_LINK_LIBRARIES(common_test ${LIBS})
+ADD_TEST(NAME common_test COMMAND common_test)
