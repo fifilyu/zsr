@@ -110,7 +110,7 @@ void print_mod_record() {
             continue;
 
         mod->record_to_str(mod);
-        printf("%s\n", mod->record);
+        printf("%s", mod->record);
     }
 }
 
