@@ -7,7 +7,7 @@ void mod_fs_register();
 void mod_gateway_register();
 void mod_io_register();
 void mod_ip_register();
-void mod_load_register();
+void mod_load_avg_register();
 void mod_mem_register();
 void mod_network_register();
 void mod_proc_register();
@@ -23,7 +23,7 @@ void load_modules() {
     mod_gateway_register();
     mod_io_register();
     mod_ip_register();
-    mod_load_register();
+    mod_load_avg_register();
     mod_mem_register();
     mod_network_register();
     mod_proc_register();

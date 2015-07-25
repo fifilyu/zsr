@@ -10,7 +10,7 @@ ADD_LIBRARY(zsr SHARED
     gateway.c
     io.c
     ip.c
-    load.c
+    load_avg.c
     mem.c
     network.c
     proc.c

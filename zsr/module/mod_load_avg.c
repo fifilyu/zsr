@@ -1,11 +1,11 @@
 #include "../framework.h"
 
-static const char *name = "load";
+static const char *name = "load_avg";
 
-static const char *opt = "--load";
+static const char *opt = "--load_avg";
 
 static const char *usage =
-        "    --load"
+        "    --load_avg"
         "       Load average\n"
         "                 (one_min, five_min, fifteen_min)\n";
 
@@ -58,7 +58,7 @@ static void free_record_list(list_head_t *head) {
     FREE_LIST_HEAD(entry, tmp, head, list);
 }
 
-void mod_load_register() {
+void mod_load_avg_register() {
     register_mod_fileds(
             name,
             info,

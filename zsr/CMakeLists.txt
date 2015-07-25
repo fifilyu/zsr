@@ -9,7 +9,7 @@ ADD_EXECUTABLE(tool_zsr
     module/mod_gateway.c
     module/mod_io.c
     module/mod_ip.c
-    module/mod_load.c
+    module/mod_load_avg.c
     module/mod_mem.c
     module/mod_network.c
     module/mod_proc.c
