@@ -1,3 +1,125 @@
 = zsr 
 
 Zpsoe System Reporter，简称 zsr 。zsr 是一个收集 Linux 系统信息的命令行工具和库。
+
+== 平台
+* 支持Linux系统
+* 暂不支持Windows系统，不过已经在计划中
+
+== 安装
+请先安装 `make` 、`cmake` 、 `git` 以及 `gcc` 。
+
+[source,bash]
+----
+git clone https://github.com/fifilyu/zsr.git
+mkdir zsr_build
+cd zsr_build
+cmake ../zsr
+make
+make install
+----
+
+默认安装到目录 `/usr/local/zsr`，执行文件路径为 `/usr/local/zsr/bin/zsr`。
+
+== 使用方法
+
+[source,console]
+.获取5次CPU使用率(idle, util, wa)
+----
+# /usr/local/zsr/bin/zsr -c 5 --cpu
+cpu=0.00,0.00,0.00;
+cpu=84.58,15.42,1.53;
+cpu=84.97,15.03,2.29;
+cpu=85.35,14.65,0.99;
+cpu=85.53,14.47,2.13;
+----
+
+[source,console]
+.获取5次系统负载
+----
+# /usr/local/zsr/bin/zsr -c 5 --load_avg
+load_avg=1.09,1.08,1.00;
+load_avg=1.09,1.08,1.00;
+load_avg=1.08,1.08,1.00;
+load_avg=1.08,1.08,1.00;
+load_avg=1.08,1.08,1.00;
+----
+
+[source,console]
+.获取1次IP地址
+----
+# /usr/local/zsr/bin/zsr -c 1 --ip
+ip=lo,127.0.0.1,255.0.0.0,0;
+ip=em1,121.88.14.117,255.255.255.0,0;
+ip=em1:3,10.10.12.3,255.255.255.0,0;
+ip=em1,10.10.12.14,255.255.255.255,0;
+ip=em1,121.88.14.33,255.255.255.255,0;
+ip=em4,10.10.14.3,255.255.255.0,0;
+----
+
+== 使用详情
+请 `/usr/local/zsr/bin/zsr -h` 查看帮助
+
+[source,console]
+----
+$ /usr/local/zsr/bin/zsr -h
+
+Usage: zsr [options]
+
+Options:
+    -a, --all       enabled all modules
+    -c, --count     the value of count determines the number of reports generated
+    -d, --delay     delay-time interval
+    -l, --list      list enabled modules
+    -h, --help      help
+
+Modules Loaded:
+    --cpu        CPU share
+                 (idle, util, wa)
+
+    --dns        Domain Name System
+                 (dns)
+
+    --fs         Report file system disk space usage
+                 (mnt_fsname, mnt_dir, mnt_type, total, used, 
+                 available, util, inodes, iused, ifree, iutil)
+
+    --gateway    Gateway
+                 (gateway)
+
+    --io         Report input/output statistics for devices and partitions
+                 (dev, tps, util, rrqm/s, wrqm/s, r/s, w/s, rMB/s, wMB/s,
+                 avgrq-sz, avgqu-sz, await, r_await, w_await)
+
+    --ip         IP address
+                 (dev, ip, netmask, ip_version)
+
+    --load       Load average
+                 (one_min, five_min, fifteen_min)
+
+    --mem        Display amount of free and used memory
+                 (total, used, free)
+
+    --network    Display bandwidth usage
+                 (dev, tx_packet, rx_packet, tx_byte, rx_byte)
+
+    --proc       Display processes
+                 (pid, state, ppid, user, virt_mem_kb, res_mem_kb,
+                 mem_util, start_time, cpu_util, cmd, cmd_path)
+
+    --swap       Display amount of free and used swap
+                 (total, used, free)
+
+    --time       System time(seconds since 1970-01-01 00:00:00 UTC)
+                 (time)
+
+    --uptime     Tell how long the system has been running
+                 (total_sec, year, month, day, hour, minute)
+
+    --who        Show who is logged in
+                 (username, tty, from, login_time)
+
+
+
+Modules Enabled:
+----
