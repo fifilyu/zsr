@@ -1,7 +1,7 @@
 #include <zsr/zsr.h>
 #include <sys/types.h>
 #include <ifaddrs.h>
-#include <linux/if_link.h>
+#include <linux/rtnetlink.h>
 
 void get_network(list_head_t *head) {
     struct ifaddrs *ifaddr, *ifap;
