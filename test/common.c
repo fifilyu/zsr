@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <check.h>
 
 #include "zsr/common.h"
