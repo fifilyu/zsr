@@ -1,4 +1,4 @@
-﻿#include <zsr/log.h>
+#include <zsr/log.h>
 #include <errno.h>
 #include <sys/stat.h>
 #include <stdio.h>
