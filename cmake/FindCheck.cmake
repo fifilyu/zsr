@@ -4,6 +4,7 @@
 #  CHECK_FOUND - system has check
 #  CHECK_INCLUDE_DIRS - the check include directory
 #  CHECK_LIBRARIES - check library
+#  CHECK_LIBRARY_DIRS - the check library directory
 #
 #  Copyright (c) 2007 Daniel Gollub <gollub@b1-systems.de>
 #  Copyright (c) 2007-2009 Bjoern Ricks  <bjoern.ricks@gmail.com>
@@ -28,6 +29,6 @@ ELSE ( CHECK_MIN_VERSION )
 ENDIF ( CHECK_MIN_VERSION )
 
 # Hide advanced variables from CMake GUIs
-MARK_AS_ADVANCED( CHECK_INCLUDE_DIRS CHECK_LIBRARIES )
+MARK_AS_ADVANCED( CHECK_INCLUDE_DIRS CHECK_LIBRARIES CHECK_LIBRARY_DIRS)
 
 
