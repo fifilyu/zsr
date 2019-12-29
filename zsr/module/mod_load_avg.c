@@ -6,7 +6,7 @@ static const char *opt = "--load_avg";
 
 static const char *usage =
         "    --load_avg"
-        "       Load average\n"
+        "   Load average\n"
         "                 (one_min, five_min, fifteen_min)\n";
 
 static mod_info_t info[] = {
