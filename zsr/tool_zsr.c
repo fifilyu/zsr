@@ -10,7 +10,6 @@ void free_record_list();
 void enable_module(const char *mod_opt);
 void enable_all_module();
 void list_enable_module();
-void list_enable_module();
 void check_enable_module();
 void usage();
 
