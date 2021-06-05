@@ -27,7 +27,7 @@ typedef struct module {
     void (*free_record_list)(list_head_t *);
 } module_t;
 
-list_head_t MOD_LIST_HEAD;
+extern list_head_t MOD_LIST_HEAD;
 
 void load_modules();
 

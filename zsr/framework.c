@@ -1,5 +1,6 @@
 #include "framework.h"
-#include <assert.h>
+
+list_head_t MOD_LIST_HEAD;
 
 void mod_cpu_register();
 void mod_dns_register();
